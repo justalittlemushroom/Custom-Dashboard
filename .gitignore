@@ -1,0 +1,19 @@
+# Node modules
+node_modules/
+
+# Unity WebGL build files (large binary files)
+unity-maze/Build/*.wasm
+unity-maze/Build/*.data
+unity-maze/Build/*.framework.js
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log

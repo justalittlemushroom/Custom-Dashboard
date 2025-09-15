@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Custom Dashboard</h1>
+    <div class="widget-container">
+        <div class="widget-block">
+            <h2>Interactive Maze Generator</h2>
+            <div id="unity-content"></div>
+            <script src="unity-loader.js"></script>
+        </div>
+        <div class="widget-block">
+            <h2>Weather Data</h2>
+            <div id="weather-content">Loading...</div>
+        </div>
+    </div>
+    <div class="widget-container">
+        <div class="widget-block">
+            <h2>NASA Feed</h2>
+            <div id="nasa-content">Loading...</div>
+        </div>
+        <div class="widget-block">
+            <h2>Government Data</h2>
+            <div id="scraping-content">Loading...</div>
+        </div>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>
