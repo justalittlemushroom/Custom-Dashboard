@@ -28,11 +28,12 @@
   --font-raleway: 'Raleway', sans-serif;
   --font-kaisei: 'KaiseiHarunoUmi', serif;
   --font-sorts: 'SortsMillGoudy', serif;
+  --url: #240f54;
 }
 
 body {
   overflow-x: hidden;
-  font-size: 24px;
+  font-size: 14px;
   color: var(--text);
   font-family: var(--font-raleway);
   background-color: var(--bg);
@@ -54,6 +55,11 @@ h2 {
   text-align: center;
 }
 
+a {
+  color: var(--url); 
+  text-decoration: underline;
+}
+
 .widget-container {
   display: flex;
   gap: 40px;
@@ -63,12 +69,33 @@ h2 {
 }
 
 .widget-block {
-  width: 640px;
-  height: 640px;
+  max-width: 640px;
+  width: 100%;
+  max-height: 640px;
   background-color: var(--preview);
   border: 4px solid var(--preview-outline);
   border-radius: 24px;
   padding: 16px;
   justify-content: center;
   align-items: center;
+}
+
+.nasa-content {
+  max-width: 600px;
+  width: 600px;
+  align-items: center;
+}
+
+.nasa-image {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+}
+
+.nasa-other {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
 }
