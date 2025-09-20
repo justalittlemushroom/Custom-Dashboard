@@ -22,6 +22,7 @@
 :root {
   --bg: #DEE6F2;
   --text: #3E3E3E;
+  --button: #83a1ad;
   --preview: #D9D9D9;
   --preview-outline: #838383;
   --preview-shadow: #00000033;
@@ -58,6 +59,14 @@ h2 {
 a {
   color: var(--url); 
   text-decoration: underline;
+}
+
+button {
+  background-color: var(--button);
+  font-family: var(--font-sorts); 
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 16px;
 }
 
 .widget-container {
@@ -120,5 +129,24 @@ a {
 
 .weather-text {
   font-size: 18px;
+  text-align: center;
+}
+
+.scraping-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  width: 600px;
+  height: 600px;
+  align-items: center;
+}
+
+.scraping-list {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.scraping-item {
+  font-size: 12px;
   text-align: center;
 }

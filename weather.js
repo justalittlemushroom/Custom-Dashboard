@@ -22,10 +22,10 @@ async function loadWeatherData() {
                     <span class="temperature">${data.temperature}°F</span>
                     <div> 
                         <p class="weather-text">${data.condition}</p>
-                        <p class="weather-text">Feels like ${data.feelsLike}°C</p>
+                        <p class="weather-text">Feels like ${data.feelsLike}°F</p>
                     </div>
                     <div> 
-                        <p class="weather-text">Humidity: ${data.humidity}%</p>
+                        <p class="weather-text">Humidity: ${Math.round(data.humidity)}%</p>
                         <p class="weather-text">Wind: ${data.windSpeed} km/h</p>
                     </div>
                 </div>
