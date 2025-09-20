@@ -1,130 +1,117 @@
 # Custom Dashboard Project
 
-Cross-platform desktop application built with Electron integrating multiple data sources and interactive visualizations.
+A cross-platform desktop application integrating multiple data sources with interactive visualizations, real-time content aggregation, and automated web scraping pipelines.
 
-## Current Implementation Status
+## 🚀 Features
 
-### ✅ Completed Features
+- **Interactive Maze Generation & Pathfinding**: Animated Kruskal's algorithm with BFS/DFS visualization
+- **NASA Data Integration**: Daily space imagery (APOD) and live Mars Rover photography
+- **Multi-Source Weather Data**: Comparative weather data from government and commercial APIs
+- **Government Data Scraping**: Real-time scraping from WhiteHouse.gov and DOJ using Playwright/Selenium
+- **Cross-Platform Desktop App**: Built with Electron for Windows, macOS, and Linux
 
-**Interactive Maze Generation**
-- Kruskal's algorithm implementation for maze generation
-- Animated BFS and DFS pathfinding visualization  
-- Unity WebGL integration within Electron application
-- Real-time algorithm step visualization with user controls (B for BFS, D for DFS, R for reset)
+## 🛠 Technology Stack
 
-**NASA Data Integration**
-- NASA APOD (Astronomy Picture of the Day) API integration
-- Mars Rover Photos API for latest Curiosity rover images
-- Toggle functionality between different NASA data sources
-- Handles multiple media types (images, videos, simulations)
+- **Frontend**: Electron, Unity WebGL, Vanilla JavaScript, CSS3
+- **Backend**: Node.js + Express RESTful API server
+- **APIs**: NASA (APOD, Mars Rover), National Weather Service, WeatherAPI
+- **Web Scraping**: Playwright (headless Chromium) and Selenium (Chrome WebDriver)
+- **Algorithms**: Kruskal's MST, Union-Find, BFS/DFS pathfinding
 
-**Weather Data Sources**
-- National Weather Service API integration (official US government data)
-- WeatherAPI.com integration for enhanced weather details
-- Toggle between different weather data providers
-- Real-time weather conditions display
+## 🎨 Design & Development Process
 
-**Backend API Server**
-- Express.js server handling all API integrations
-- CORS-enabled endpoints for frontend communication
-- Error handling and data transformation
-- Environment variable configuration for API keys
+**Timeline**: 3 days from concept to deployment
 
-### 🏗️ In Progress
+- **Day 1**: Converted existing Java maze generator to Unity WebGL build + Algorithm implementation
+- **Day 2**: Set up Electron dashboard + WebGL integration + NASA and Weather API integration
+- **Day 3**: Added web scraping pipelines for government data sources
 
-**Web Scraping Pipeline**
-- Selenium and Playwright setup for government data scraping
-- Target sources: Executive orders, DOJ rulings
-- Real-time content aggregation planned
+## 🔧 Technical Highlights
 
-## Technology Stack
+### Algorithm Visualization
+- **Maze Generation**: Animated Kruskal's algorithm with Union-Find data structure
+- **Pathfinding**: Real-time BFS (Press 'B') and DFS (Press 'D') with visual feedback
+- **Performance**: 60 FPS Unity rendering with efficient memory management
 
-**Frontend:**
-- Electron (cross-platform desktop app)
-- Unity WebGL (maze visualization)
-- Vanilla JavaScript (API integration)
-- HTML5/CSS3
+### Data Integration
+- **NASA APIs**: Astronomy Picture of the Day and Mars Rover missions
+- **Weather Comparison**: National Weather Service vs commercial WeatherAPI
+- **Government Scraping**: Executive orders and DOJ announcements with automated pipelines
 
-**Backend:**
-- Node.js/Express.js
-- NASA APIs
-- National Weather Service API
-- WeatherAPI.com
+### Cross-Platform Architecture
+- **Electron Framework**: Single codebase for desktop deployment
+- **Unity WebGL**: Interactive visualizations embedded in desktop app
+- **Modular Design**: Independent widget system with isolated data sources
 
-**Algorithms & Data Structures:**
-- Kruskal's algorithm (minimum spanning tree)
-- Union-Find data structure
-- BFS and DFS search algorithms
-- Graph theory implementation
+## 🎯 API Endpoints
 
-**Planned:**
-- Selenium WebDriver
-- Playwright automation
-- Web scraping pipelines
-
-## Project Structure
-
-```
-dashboard-app/
-├── main.js              # Electron main process
-├── index.html           # Main dashboard interface
-├── styles.css           # Dashboard styling
-├── server.js            # Express API server
-├── nasa.js              # NASA API frontend logic
-├── weather.js           # Weather API frontend logic
-├── unity-loader.js      # Unity WebGL integration
-├── unity-maze/          # Unity build files
-│   ├── Build/
-│   ├── TemplateData/
-│   └── index.html
-└── .env                 # API keys (not committed)
-```
-
-## Setup Instructions
-
-1. Install dependencies:
-   ```bash
-   npm install electron express cors dotenv --save-dev
-   ```
-
-2. Create `.env` file with API keys:
-   ```
-   NASA_API_KEY=your_nasa_key
-   WEATHER_API_ALT_KEY=your_weatherapi_key
-   ```
-
-3. Start the API server:
-   ```bash
-   node server.js
-   ```
-
-4. Run the Electron app:
-   ```bash
-   npm start
-   ```
-
-## API Endpoints
-
-- `GET /api/nasa` - NASA APOD data
-- `GET /api/mars-rover` - Mars Rover photos
+- `GET /api/nasa` - NASA Astronomy Picture of the Day
+- `GET /api/mars-rover` - Latest Mars Rover photographs
 - `GET /api/weather` - National Weather Service data
-- `GET /api/weather-alt` - WeatherAPI.com data
+- `GET /api/weather-alt` - Alternative weather API data
+- `GET /api/scraping?source=executive-orders` - White House executive orders
+- `GET /api/scraping?source=doj-rulings` - DOJ announcements
 
-## Features Demo
+## 🚀 Quick Start
 
-- **Maze Generation**: Animated Kruskal's algorithm creating solvable mazes
-- **Pathfinding**: Visual BFS/DFS algorithm comparison
-- **Data Integration**: Multiple API sources with toggle functionality
-- **Real-time Updates**: Live weather and space data feeds
+### Prerequisites
+- Node.js 16+, Chrome browser, Unity 2022.3+ (for modifications)
 
-## Next Steps
+### Installation
+```bash
+git clone https://github.com/justalittlemushroom/Custom-Dashboard.git
+cd Custom-Dashboard
+npm install
+npx playwright install chromium
+```
 
-1. Implement web scraping for government data sources
-2. Add remaining data pipeline integrations  
-3. Enhance UI/UX design and layout
-4. Add error handling and offline functionality
-5. Optimize performance and bundle size
+### Environment Setup
+```env
+NASA_API_KEY=your_nasa_api_key
+WEATHER_API_ALT_KEY=your_weatherapi_key
+```
+
+### Run Application
+```bash
+# Start Express server
+node server.js
+
+# Start Electron app
+npm start
+```
+
+## 🎮 Controls
+
+### Dashboard Navigation
+- **NASA Toggle**: Switch between APOD and Mars Rover imagery
+- **Weather Toggle**: Compare different weather data sources
+- **Scraping Toggle**: Switch between government data feeds
+
+### Maze Interface
+- **B**: Breadth-First Search pathfinding
+- **D**: Depth-First Search pathfinding  
+- **R**: Reset search and clear visualization
+
+## 💡 Key Development Decisions
+
+### Unity WebGL Integration
+Chose Unity for algorithm visualization to provide smooth 60 FPS rendering and interactive controls within the Electron desktop environment.
+
+### Hybrid Scraping Architecture
+Implemented both Playwright and Selenium for maximum website compatibility.
+
+### Multi-Source Data Strategy
+Integrated multiple APIs per data type (weather, space) to provide data comparison and ensure reliability through redundancy.
+
+## 🎯 Learning Outcomes
+
+- Cross-platform desktop application development with Electron
+- Unity WebGL integration and browser deployment
+- Algorithm visualization and interactive educational tools
+- Web scraping with modern automation frameworks
+- RESTful API design and multi-source data aggregation
+- Real-time data processing and error handling
 
 ---
 
-*This is a technical demonstration project showcasing full-stack development, algorithm implementation, API integration, and desktop application development skills.*
+*Built to demonstrate full-stack development, algorithm visualization, data integration, and cross-platform desktop application architecture.*
